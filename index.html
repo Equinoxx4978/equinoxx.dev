@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Equinoxx.dev</title>
+    <title>equinoxx.dev</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+        #main-title {
+            font-family: 'Orbitron', sans-serif;
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+        #navbar {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            transform: translateX(-20px);
+        }
+        #navbar section:first-child {
+            
+        }
+        #navbar section {
+            display: flex;
+            position: relative;
+            background-color: #333;
+            align-items: center;
+            transform: skew(-20deg);
+        }
+        #navbar section a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            transform: skew(20deg);
+        }
+        #navbar section:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <header>
+        <div id="navbar">
+            <section>
+                <a href="#" id="main-title">equinoxx.dev</a>
+            </section>
+            <section>
+                <a href="#">link 1</a>
+            </section>
+            <section>
+                <a href="#">link 2</a>
+            </section>
+      
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Hello!</h2>
+        </section>
+    </main>
 </body>
 </html>
