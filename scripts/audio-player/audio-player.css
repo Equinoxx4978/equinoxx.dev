@@ -1,0 +1,61 @@
+#player {
+    display: none;
+}
+#now-playing {
+    text-align: center;
+}
+#track-list {
+    margin-top: 1em;
+    
+    a {
+        cursor: pointer;
+    }
+}
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.track-item {
+    padding: 5px;
+    text-align: center;
+    display: block;
+    background-color: #111111;
+}
+.selected-track {
+    background-color: #222222;
+    color: white;
+}
+.player-controls {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin-bottom: 1em;
+    #toggle-playing-button {
+        padding: 0;
+        width: 30px;
+        text-align: center;
+        border: 1px dashed white;
+        background-color: black;
+        color: white;
+    }
+    #player-time-container {
+        display: flex;
+        border: 1px dashed white;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    #player-time {
+        text-align: center;
+        margin: auto;
+    }
+}
+#previous-button, #next-button {
+    padding: 0;
+    width: 30px;
+    text-align: center;
+    border: 1px dashed white;
+    background-color: black;
+    color: white;
+}

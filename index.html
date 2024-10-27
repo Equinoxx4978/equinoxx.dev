@@ -3,80 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <title>equinoxx.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-rh="true">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+        @import url('scripts/audio-player/audio-player.css');
+
+        .container {
+            display: grid;
+            grid-template-areas: ". main sidebar .";
+            grid-template-columns: 1fr 600px 300px 1fr;
+            width: 100dvw;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
         body {
             margin: 0;
-            padding: 0;
+            width: 100%;
+            font-family: 'Orbitron', sans-serif;
+            background-color: black;
+            background-image: url("assets/background.jpg");
+        }
+
+        .main {
+            grid-area: main;
             background-color: black;
             color: white;
+            filter: drop-shadow(10px 10px 0 rgba(0, 0, 0, 0.25));
         }
-        header {
-            margin: 10px 0 10px 0;}
-        #navbar {
-            padding: 0;
-            display: flex;
-            transform: translateX(-20px);
-        }
-        #navbar section {
-            display: flex;
-            position: relative;
-            background-color: #333;
-            align-items: center;
-            transform: skew(-20deg);
-            font-size: 20px;
-            transition: padding 0.3s ease;
-        }
-        #navbar section a {
-            display: block;
-            padding: 10px 20px;
+
+        .sidebar {
+            grid-area: sidebar;
             color: white;
-            text-decoration: none;
-            transform: skew(20deg);
-        }
-        #navbar section:hover {
-            background-color: #555;
-            text-decoration: underline 2px;
-            padding: 0 20px 0 20px;
-            transition: padding 0.3s ease;
-        }
-        #main-title {
-            font-family: 'Orbitron', sans-serif;
-            display: inline-block;
-            font-size: 30px;
-            margin-left: 20px;
-        }
-    </style>
-    <script>
-        let counter = 0;
-        function secret() {
-            counter++;
-            if (counter === 21) {
-                alert('Shh! This is an unfinished secret, come back later!');
-                
+            filter: drop-shadow(10px 10px 0 rgba(0, 0, 0, 0.25));
+
+            .sidebar-section {
+                background-color: black;
+                padding: 15px;
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                margin: 0;
+                text-align: center;
             }
         }
-    </script>
+
+        .header {
+            margin: 15px;
+
+            .main-title {
+                display: block;
+                font-weight: bold;
+                font-size: 30px;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+            }
+
+            .main-title:hover {
+                text-decoration: underline;
+            }
+
+            nav {
+                display: flex;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                flex-grow: 1;
+                text-align: center;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .content {
+            margin: 15px;
+        }
+
+        .divider {
+            border-top: 1px dashed white;
+            height: 0;
+            margin: 15px 0 15px 0;
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                grid-template-areas: "main" "sidebar";
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div id="navbar">
-            <section>
-                <a href="#" id="main-title" onclick="secret()">equinoxx.dev</a>
-            </section>
-            <section>
-                <a href="#">link 1</a>
-            </section>
-            <section>
-                <a href="#">link 2</a>
-            </section>
-      
+<div class="container">
+    <div class="main">
+        <div class="header">
+            <a class="main-title" href="#">equinoxx.dev</a>
+            <div class="divider"></div>
+            <nav>
+                <a href="#">home</a>
+                <a href="#">projects</a>
+                <a href="#">links</a>
+            </nav>
+            <div class="divider"></div>
         </div>
-    </header>
-    <main>
-        <section>
-            <h2>Hello!</h2>
-        </section>
-    </main>
+        <div class="content">
+            <h2>Thingy 1</h2>
+            <p>Content goes here</p>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-section">
+            <h2>music</h2>
+            <div class="divider"></div>
+            <p>Here's some music I like!</p>
+                <div class="player-controls">
+                    <button id="toggle-playing-button" onclick="togglePlaying()">⏸</button>
+                    <div id="player-time-container">
+                        <p id="player-time">00:00 / 00:00</p>
+                    </div>
+                    <button id="previous-button" onclick="previous()">⏮</button>
+                    <button id="next-button" onclick="next()">⏭</button>
+                </div>
+            
+            <div id="player-container">
+                <h2 id="now-playing">Nothing Playing :(</h2>
+                <audio id="player" controls="" preload="auto" src=""></audio>
+            </div>
+            <div id="track-list"></div>
+            
+            <script src="scripts/audio-player/audio-player.js"></script>
+        </div>
+        <div class="sidebar-section">
+            <h2>blog</h2>
+            <div class="divider"></div>
+            <p>canonical sucks</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
