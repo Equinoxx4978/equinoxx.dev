@@ -7,6 +7,7 @@ const nowPlayingElement = document.getElementById("now-playing");
 const playerElement = document.getElementById("player");
 const togglePlayingButton = document.getElementById("toggle-playing-button");
 const playerTimeElement = document.getElementById("player-time");
+const volumeSlider = document.getElementById("volume-slider");
 
 let tracks = [];
 let nowPlayingIndex = null;
@@ -99,6 +100,10 @@ playerElement.addEventListener("timeupdate", function () {
 
 playerElement.addEventListener("play", function () {
     togglePlayingButton.textContent = "⏸";
+});
+
+volumeSlider.addEventListener("input", function () {
+    playerElement.volume = volumeSlider.value;
 });
 
 addTrack("Hven - iridESCEnT");

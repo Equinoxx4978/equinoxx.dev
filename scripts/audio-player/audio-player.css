@@ -24,17 +24,37 @@
     background-color: #111111;
 }
 .selected-track {
-    background-color: #222222;
+    background-color: #333333;
     color: white;
 }
 .player-controls {
-    display: flex;
-    justify-content: center;
-    height: 30px;
     margin-bottom: 1em;
+    box-sizing: border-box;
+    .player-controls-top, .player-controls-bottom {
+        justify-content: center;
+        display: flex;
+    }
+    .player-controls-top {
+        height: 30px;
+    }
+    .player-controls-bottom {
+        height: 15px;
+        
+        p {
+            font-size: 12px;
+            padding: 0;
+            margin: auto;
+            width: 30px;
+            height: 100%;
+            text-align: center;
+            border: 1px dashed white;
+        }
+    }
+    
     #toggle-playing-button {
         padding: 0;
         width: 30px;
+        height: 100%;
         text-align: center;
         border: 1px dashed white;
         background-color: black;
@@ -58,4 +78,45 @@
     border: 1px dashed white;
     background-color: black;
     color: white;
+}
+
+#volume-slider {
+    border: 1px dashed white;
+    margin: 0;
+    -webkit-appearance: none;
+    flex-grow: 1;
+    height: 100%;
+    background: #111111;
+    outline: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+#volume-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 100%;
+    background: #111111;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -1000px 0 0 1000px #ffffff;
+    cursor: pointer;
+}
+
+#volume-slider::-moz-range-track {
+    width: 100%;
+    height: 100%;
+    background: #111111;
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 0;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -1000px 0 0 1000px #ffffff;
+    cursor: pointer;
 }
