@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>equinoxx.dev / projects</title><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-rh="true">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <div class="header">
+            <div class="heading">
+                <a class="equinoxx-dev" href="index.html">equinoxx.dev</a>
+                <p class="heading-divider"> / </p>
+                <a class="page-title" href="projects.html">projects</a>
+            </div>
+            <div class="divider"></div>
+            <nav>
+                <a href="index.html">home</a>
+                <a href="projects.html">projects</a>
+                <!--                <a href="#">links</a>-->
+            </nav>
+            <div class="divider"></div>
+        </div>
+        <div class="content">
+            <h1>My Projects!</h1>
+            <h2>Nyx [Hiatus]</h2>
+            <h3>Summary</h3>
+            <p>
+                Multipurpose discord bot written in JavaScript using discord.js.
+            </p>
+            <h3>Features</h3>
+            <ul>
+                <li>Random number generators (Dice, Coin-flip, and Custom)</li>
+                <li>Random anime generator</li>
+                <li>Quotes</li>
+                <li>Tools (Ping, Echo, etc.)</li>
+                <li>Profile tools (Account age, PFP, etc.)</li>
+                <li>+ More in the future (If I start working on it again)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-section">
+            <h2>Music</h2>
+            <div class="divider"></div>
+            <p>Here's some music I like!</p>
+            <div class="player-controls">
+                <div class="player-controls-top"><button id="toggle-playing-button" onclick="togglePlaying()">⏸</button>
+                    <div id="player-time-container">
+                        <p id="player-time">00:00 / 00:00</p>
+                    </div>
+                    <button id="previous-button" onclick="previous()">⏮</button>
+                    <button id="next-button" onclick="next()">⏭</button>
+                </div>
+                <div class="player-controls-bottom">
+                    <button id="volume-up-button" onclick="volumeDown()">-</button>
+                    <label for="volume-slider"></label>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                    <button id="volume-down-button" onclick="volumeUp()">+</button>
+                </div>
+            </div>
+            <div id="player-container">
+                <h2 id="now-playing">Nothing Playing :(</h2>
+                <audio id="player" controls="" preload="auto" src=""></audio>
+            </div>
+            <div id="track-list"></div>
+
+            <script src="scripts/audio-player/audio-player.js"></script>
+        </div>
+        <div class="sidebar-section">
+            <h2>Blog</h2>
+            <div class="divider"></div>
+            <p>nothing yet...</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

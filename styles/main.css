@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('../scripts/audio-player/audio-player.css');
+
+.container {
+    display: grid;
+    grid-template-areas: ". main sidebar .";
+    grid-template-columns: 1fr 600px 300px 1fr;
+    width: 100dvw;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    background-color: black;
+    background-image: url("../assets/background.jpg");
+    
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: lowercase;
+    }
+}
+
+.main {
+    grid-area: main;
+    background-color: black;
+    color: white;
+    filter: drop-shadow(10px 10px 0 rgba(0, 0, 0, 0.25));
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-area: sidebar;
+    color: white;
+    filter: drop-shadow(10px 10px 0 rgba(0, 0, 0, 0.25));
+
+    .sidebar-section {
+        background-color: black;
+        padding: 15px;
+        margin-bottom: 30px;
+        
+        &:last-child {
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+    }
+
+    h2 {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+.header {
+    margin: 15px;
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        
+        .equinoxx-dev {
+            display: block;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+        .heading-divider {
+            display: block;
+            font-weight: bold;
+            margin: 0 10px 0 10px; 
+        }
+        
+        .page-title {
+            display: block;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #f0f0f0;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    
+
+    nav {
+        display: flex;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+}
+
+.content {
+    margin: 15px;
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+.divider {
+    border-top: 1px dashed white;
+    height: 0;
+    margin: 15px 0 15px 0;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        grid-template-areas: "main" "sidebar";
+        grid-template-columns: 1fr;
+    }
+}
