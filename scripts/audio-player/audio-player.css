@@ -29,13 +29,13 @@
 }
 .player-controls {
     margin-bottom: 1em;
-    box-sizing: border-box;
     .player-controls-top, .player-controls-bottom {
         justify-content: center;
         display: flex;
     }
     .player-controls-top {
         height: 30px;
+        
     }
     .player-controls-bottom {
         height: 15px;
@@ -45,9 +45,9 @@
             padding: 0;
             margin: auto;
             width: 30px;
-            height: 100%;
             text-align: center;
             border: 1px dashed white;
+            box-sizing: border-box;
         }
     }
     
@@ -71,13 +71,17 @@
         margin: auto;
     }
 }
-#previous-button, #next-button {
+#previous-button, #next-button, #volume-up-button, #volume-down-button {
     padding: 0;
     width: 30px;
     text-align: center;
     border: 1px dashed white;
     background-color: black;
     color: white;
+}
+
+#volume-up-button, #volume-down-button {
+    margin: auto;
 }
 
 #volume-slider {

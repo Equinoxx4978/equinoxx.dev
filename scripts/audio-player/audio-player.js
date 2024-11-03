@@ -12,6 +12,8 @@ const volumeSlider = document.getElementById("volume-slider");
 let tracks = [];
 let nowPlayingIndex = null;
 
+playerElement.volume = 0.5;
+
 function addTrack(trackName) {
     let element = document.createElement("a");
     element.classList.add("track-item");
@@ -81,6 +83,28 @@ function next() {
         playTrack(0);
     } else {
         playTrack(nowPlayingIndex + 1);
+    }
+}
+
+function volumeUp() {
+    if (playerElement.volume + 0.05 > 1) {
+        playerElement.volume = 1;
+        volumeSlider.value = 1;
+    } else {
+        playerElement.volume = playerElement.volume + 0.05;
+        volumeSlider.value = playerElement.volume;
+    }
+}
+
+
+
+function volumeDown() {
+    if (playerElement.volume - 0.05 < 0) {
+        playerElement.volume = 0;
+        volumeSlider.value = 0;
+    } else {
+        playerElement.volume = playerElement.volume - 0.05;
+        volumeSlider.value = playerElement.volume;
     }
 }
 
